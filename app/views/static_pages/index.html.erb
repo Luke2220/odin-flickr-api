@@ -1,0 +1,11 @@
+<%=form_with url: static_pages_path, method: 'get', action: 'index' do |form|%>
+<%= form.label :flickr_user_id%>
+<%=form.text_field :flickr_user_id%>
+<%=form.submit 'Submit'%>
+<%end%>
+
+<% if @urls.empty? == false%>
+<%@urls.each do |img|%>
+  <img src=<%=img.to_s%> alt='flickr image'>
+  <%end%>
+<%end%>
